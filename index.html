@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday, Beautiful Soul 🌷</title>
+<style>
+:root {
+  --pink: #ff719a;
+  --rose: #e94f7d;
+  --cream: #fff8f5;
+  --ink: #553746;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  color: var(--ink);
+  background: var(--cream);
+  text-align: center;
+}
+button { cursor: pointer; font: inherit; }
+.hero {
+  min-height: 92vh;
+  display: grid;
+  place-items: center;
+  padding: 45px 20px;
+  background: linear-gradient(145deg,#ffe4ec,#fff8f5 55%,#f9e3f4);
+  position: relative;
+  overflow: hidden;
+}
+.hero-content { max-width: 720px; position: relative; z-index: 1; }
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font: 12px Arial, sans-serif;
+  color: var(--rose);
+}
+h1 {
+  font-size: clamp(42px, 9vw, 78px);
+  line-height: 1.05;
+  margin: 20px 0;
+  color: #b83c68;
+}
+.hero p { font-size: 19px; line-height: 1.8; }
+button.primary {
+  background: var(--rose);
+  color: white;
+  border: 0;
+  border-radius: 30px;
+  padding: 15px 24px;
+  margin: 12px 5px;
+  box-shadow: 0 8px 20px #e94f7d30;
+}
+button.primary:hover { transform: translateY(-2px); }
+section { padding: 70px 20px; }
+section h2 { font-size: clamp(28px, 5vw, 42px); color: #b83c68; }
+.intro { max-width: 680px; margin: auto; line-height: 1.9; }
+.gift {
+  font-size: 100px;
+  border: 0;
+  background: transparent;
+  transition: transform .3s;
+}
+.gift:hover { transform: scale(1.1) rotate(-5deg); }
+#giftMessage, #letterText { display: none; }
+.panel {
+  max-width: 850px;
+  margin: 25px auto;
+  padding: 28px;
+  border-radius: 24px;
+  background: white;
+  box-shadow: 0 10px 35px #7b435015;
+}
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(230px,1fr));
+  gap: 20px;
+  max-width: 900px;
+  margin: 30px auto;
+}
+.photo-card {
+  background: white;
+  padding: 12px 12px 22px;
+  border-radius: 18px;
+  box-shadow: 0 8px 25px #7b435018;
+}
+.photo-card img {
+  display: block;
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 12px;
+  background: #f8e0e8;
+}
+.photo-card p { margin-bottom: 0; }
+.video-wrap { max-width: 650px; margin: 25px auto; }
+video {
+  width: 100%;
+  border-radius: 18px;
+  background: #f5dce5;
+}
+.note { font: 13px Arial,sans-serif; color: #886b78; line-height: 1.7; }
+.affirmations {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+  gap: 14px;
+  max-width: 900px;
+  margin: 30px auto;
+}
+.affirmation {
+  background: #fff;
+  padding: 22px 15px;
+  border-radius: 18px;
+  border: 1px solid #f8d9e4;
+  line-height: 1.7;
+}
+.cake-button {
+  border: 0;
+  background: transparent;
+  font-size: 100px;
+  transition: transform .3s;
+}
+.cake-button:hover { transform: scale(1.08); }
+.letter {
+  display: none;
+  max-width: 700px;
+  margin: 25px auto;
+  padding: clamp(22px,5vw,45px);
+  background: white;
+  border-radius: 20px;
+  text-align: left;
+  line-height: 2;
+  box-shadow: 0 10px 35px #7b435018;
+}
+.letter h3 { text-align: center; color: #b83c68; font-size: 27px; }
+footer { padding: 35px 15px; background: #ffe4ec; line-height: 1.8; }
+.heart {
+  position: fixed;
+  bottom: -30px;
+  z-index: 5;
+  pointer-events: none;
+  animation: floatUp 5s linear forwards;
+}
+@keyframes floatUp {
+  to { transform: translateY(-110vh) rotate(25deg); opacity: 0; }
+}
+#confetti {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 10;
+}
+@media (prefers-reduced-motion: reduce) {
+  ,::before,*::after { scroll-behavior: auto !important; animation: none !important; }
+}
+</style>
+</head>
+<body>
+
+<canvas id="confetti"></canvas>
+
+<header class="hero">
+  <div class="hero-content">
+    <div class="eyebrow">A little celebration made just for you</div>
+    <h1>Happy Birthday,<br>Beautiful Soul 🌷</h1>
+    <p>Today is all about celebrating you — your smile, your heart, your journey, and the beautiful person you are becoming.</p>
+    <button class="primary" onclick="document.getElementById('surprise').scrollIntoView()">Open your surprise 🎁</button>
+    <p style="font-size:28px">♡ ✨ ♡</p>
+  </div>
+</header>
+
+<section id="surprise">
+  <p class="eyebrow">Something special awaits</p>
+  <h2>A little gift for you 🎀</h2>
+  <p class="intro">Every birthday deserves a little magic. Tap the gift below and see what is waiting for you.</p>
+  <button class="gift" aria-label="Open birthday gift" onclick="openGift()">🎁</button>
+  <div id="giftMessage" class="panel">
+    <h2>Surprise! 💗</h2>
+    <p class="intro">May this new chapter bring you unexpected joy, genuine laughter, peaceful days, beautiful memories, and so many reasons to smile.</p>
+    <p style="font-size:32px">🌷 🦋 🎂 💖 ✨</p>
+  </div>
+</section>
+
+<section style="background:#fff0f5">
+  <p class="eyebrow">Every picture tells a story</p>
+  <h2>Look How Far You've Come 📸</h2>
+  <p class="intro">From precious memories to the wonderful person you are today, every chapter is worth celebrating.</p>
+  <div class="gallery">
+    <div class="photo-card">
+      <img src="childhood-photo.jpg" alt="A precious childhood memory" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+      <div style="display:none;padding:65px 10px;background:#fff0f5;border-radius:12px;font-size:55px">🧸🌸</div>
+      <p><strong>Little You</strong><br>A precious beginning 💕</p>
+    </div>
+    <div class="photo-card">
+      <img src="birthday-photo.jpg" alt="A beautiful recent photo" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+      <div style="display:none;padding:65px 10px;background:#fff0f5;border-radius:12px;font-size:55px">🌷✨</div>
+      <p><strong>The Beautiful You</strong><br>Look at you blossoming 🌹</p>
+    </div>
+  </div>
+  <p class="note">Your photos will appear here once you upload them to the repository using these exact filenames.</p>
+</section>
+
+<section>
+  <p class="eyebrow">A moment to remember</p>
+  <h2>Your Happy Dance 💃</h2>
+  <p class="intro">A little space for a moment that makes you smile. Some memories are simply too lovely not to keep.</p>
+  <div class="video-wrap">
+    <video controls playsinline preload="metadata">
+      <source src="her-dancing.mp4" type="video/mp4">
+      Your browser does not support this video.
+    </video>
+  </div>
+  <p class="note">Upload your video as <strong>her-dancing.mp4</strong> for it to play here.</p>
+</section>
+
+<section style="background:#fff0f5">
+  <p class="eyebrow">A reminder for your new year</p>
+  <h2>12 Things You Deserve to Remember 💌</h2>
+  <div class="affirmations">
+    <div class="affirmation">🌷 You deserve genuine happiness.</div>
+    <div class="affirmation">✨ Your dreams are worth pursuing.</div>
+    <div class="affirmation">💗 Your heart is precious.</div>
+    <div class="affirmation">🦋 You are allowed to grow at your own pace.</div>
+    <div class="affirmation">🌸 You are more than your mistakes.</div>
+    <div class="affirmation">☀️ You deserve peaceful days.</div>
+    <div class="affirmation">💐 Your kindness matters.</div>
+    <div class="affirmation">👑 You never have to be perfect to be worthy.</div>
+    <div class="affirmation">🌈 Better days can still find you.</div>
+    <div class="affirmation">💫 Your voice deserves to be heard.</div>
+    <div class="affirmation">🎀 You deserve people who celebrate you.</div>
+    <div class="affirmation">❤️ Never forget how special your life is.</div>
+  </div>
+</section>
+
+<section>
+  <p class="eyebrow">Make a birthday wish</p>
+  <h2>A Little Birthday Magic 🎂</h2>
+  <p class="intro">Close your eyes, make a wish, and tap the cake when you're ready for a little birthday letter.</p>
+  <button class="cake-button" aria-label="Open birthday letter" onclick="openLetter()">🎂</button>
+  <p><button class="primary" onclick="openLetter()">Read your birthday letter 💌</button></p>
+  <article id="letterText" class="letter">
+    <h3>To a Truly Beautiful Soul 🌷</h3>
+    <p>Happy birthday to you! 💗</p>
+    <p>Today, I hope you take a moment to appreciate just how far you have come. Every year brings new lessons, new memories, and new opportunities to become even more of the person you are meant to be.</p>
+    <p>I hope this new chapter is gentle with your heart. May it bring you laughter that comes from deep within, people who make you feel appreciated, opportunities that excite you, and moments that remind you how beautiful life can be.</p>
+    <p>Never feel that you have to have everything figured out. Keep growing, keep dreaming, keep discovering the things that make your heart happy. Give yourself the same kindness you so freely deserve, and remember to celebrate even the little victories.</p>
+    <p>May your days be filled with love, your path with wonderful possibilities, and your heart with a peace that stays even when life gets busy.</p>
+    <p>Keep being your lovely self. The world is a little more beautiful with you in it. 🌷</p>
+    <p>Wishing you a birthday as lovely as your soul and a year full of beautiful surprises. 🎂✨</p>
+    <p style="text-align:center;font-size:24px">With so much warmth and best wishes, 💕</p>
+  </article>
+</section>
+
+<footer>
+  <div style="font-size:30px">🌷 💗 🦋</div>
+  <p>May this be the beginning of a beautiful new chapter.</p>
+  <p>Happy Birthday, Beautiful Soul! 🎂</p>
+  <small>Made with love, care, and a little birthday magic ✨</small>
+</footer>
+
+<script>
+function openGift() {
+  document.getElementById("giftMessage").style.display = "block";
+  confettiBurst();
+  document.getElementById("giftMessage").scrollIntoView({behavior:"smooth",block:"center"});
+}
+function openLetter() {
+  const letter = document.getElementById("letterText");
+  letter.style.display = "block";
+  confettiBurst();
+  letter.scrollIntoView({behavior:"smooth",block:"start"});
+}
+function makeHeart() {
+  const heart = document.createElement("span");
+  heart.className = "heart";
+  heart.textContent = ["💗","💕","💖","🌸","✨"][Math.floor(Math.random()*5)];
+  heart.style.left = Math.random()*100 + "vw";
+  heart.style.fontSize = (14 + Math.random()*20) + "px";
+  document.body.appendChild(heart);
+  setTimeout(() => heart.remove(), 5000);
+}
+setInterval(makeHeart, 1000);
+
+function confettiBurst() {
+  const canvas = document.getElementById("confetti");
+  const ctx = canvas.getContext("2d");
+  const dpr = window.devicePixelRatio || 1;
+  canvas.width = window.innerWidth*dpr;
+  canvas.height = window.innerHeight*dpr;
+  canvas.style.width = window.innerWidth+"px";
+  canvas.style.height = window.innerHeight+"px";
+  ctx.scale(dpr,dpr);
+  const pieces = Array.from({length:130}, () => ({
+    x:Math.random()*window.innerWidth,
+    y:-20-Math.random()window.innerHeight.4,
+    size:4+Math.random()*7,
+    speed:2+Math.random()*4,
+    drift:(Math.random()-.5)*3,
+    hue:Math.random()*360
+  }));
+  let frame=0;
+  function draw() {
+    ctx.clearRect(0,0,window.innerWidth,window.innerHeight);
+    pieces.forEach(p => {
+      p.y+=p.speed;
+      p.x+=p.drift;
+      ctx.fillStyle=hsl(${p.hue},80%,70%);
+      ctx.fillRect(p.x,p.y,p.size,p.size*1.5);
+    });
+    frame++;
+    if(frame<140) requestAnimationFrame(draw);
+    else ctx.clearRect(0,0,window.innerWidth,window.innerHeight);
+  }
+  draw();
+}
+</script>
+</body>
+</html>
