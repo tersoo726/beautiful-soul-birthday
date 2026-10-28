@@ -1,331 +1,924 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Happy Birthday, My Beautiful Soul ❤️</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#190f19">
+<title>A Beautiful Day for a Beautiful Soul 🌷</title>
 
-  <style>
-    * { box-sizing: border-box; }
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap');
 
-    body {
-      margin: 0;
-      font-family: Georgia, serif;
-      color: #633047;
-      background: linear-gradient(135deg, #fff0f5, #ffe0ec, #fff7fa);
-      text-align: center;
-      overflow-x: hidden;
-    }
+:root {
+  --bg: #190f19;
+  --card: #291a28;
+  --pink: #f5b9ce;
+  --gold: #e7c69a;
+  --cream: #fff4ed;
+  --muted: #d2b8c5;
+}
 
-    header {
-      padding: 65px 18px 45px;
-      background: linear-gradient(135deg, #ff8fb5, #ed5d96);
-      color: white;
-    }
+* { box-sizing: border-box; }
 
-    h1 { font-size: clamp(2.2rem, 8vw, 4rem); margin: 12px 0; }
-    h2 { color: #d84682; }
-    p { line-height: 1.8; }
+html { scroll-behavior: smooth; }
 
-    .heart { font-size: 45px; animation: beat 1s infinite; }
+body {
+  margin: 0;
+  background: var(--bg);
+  background-image: radial-gradient(ellipse at top, #51263f, transparent 65%);
+  color: var(--cream);
+  font-family: "DM Sans", sans-serif;
+  overflow-x: hidden;
+}
 
-    @keyframes beat {
-      50% { transform: scale(1.18); }
-    }
+button, a { -webkit-tap-highlight-color: transparent; }
+button { font: inherit; cursor: pointer; }
+a { color: inherit; text-decoration: none; }
 
-    section {
-      max-width: 850px;
-      margin: 25px auto;
-      padding: 28px 18px;
-    }
+h1, h2, h3 {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-weight: 500;
+}
 
-    .card {
-      background: rgba(255,255,255,.88);
-      padding: 25px;
-      border-radius: 22px;
-      box-shadow: 0 8px 25px #b94c7020;
-      margin: 20px 0;
-    }
+main, footer { position: relative; z-index: 1; }
 
-    button, .song-link {
-      border: none;
-      background: #e84f8a;
-      color: white;
-      padding: 13px 22px;
-      border-radius: 30px;
-      font-size: 16px;
-      cursor: pointer;
-      text-decoration: none;
-      display: inline-block;
-      margin: 7px;
-    }
+section {
+  width: min(100% - 34px, 850px);
+  margin: auto;
+  padding: 70px 0;
+}
 
-    button:hover, .song-link:hover { background: #c72f6d; }
+.center { text-align: center; }
 
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 18px;
-    }
+.eyebrow {
+  color: var(--gold);
+  font-size: .7rem;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
 
-    .photo-card {
-      background: white;
-      border-radius: 18px;
-      padding: 12px;
-      box-shadow: 0 5px 18px #b94c7020;
-    }
+h1 {
+  font-size: clamp(3.2rem, 12vw, 6.3rem);
+  line-height: .95;
+  margin: 24px 0;
+}
 
-    .photo-card img {
-      width: 100%;
-      height: 300px;
-      object-fit: cover;
-      border-radius: 12px;
-      background: #ffe0ec;
-    }
+h1 em { color: var(--pink); }
 
-    video {
-      width: 100%;
-      max-height: 480px;
-      border-radius: 15px;
-      background: #2d1822;
-    }
+h2 {
+  font-size: clamp(2.5rem, 9vw, 4rem);
+  line-height: 1;
+  margin: 16px 0;
+}
 
-    #letter {
-      display: none;
-      text-align: left;
-      white-space: pre-line;
-      line-height: 2;
-    }
+p {
+  line-height: 1.85;
+  overflow-wrap: anywhere;
+}
 
-    .affirmation {
-      background: #fff;
-      border-radius: 15px;
-      padding: 15px;
-      margin: 10px 0;
-    }
+.intro {
+  color: var(--muted);
+  max-width: 550px;
+  margin: 0 auto 30px;
+  font-size: .96rem;
+}
 
-    footer {
-      background: #ed5d96;
-      color: white;
-      padding: 25px 15px;
-    }
+.hero {
+  min-height: 94svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding-top: 55px;
+}
 
-    .floating-heart {
-      position: fixed;
-      bottom: -30px;
-      pointer-events: none;
-      animation: floatUp 5s linear forwards;
-      z-index: 5;
-    }
+.hero-content {
+  animation: rise 1.4s ease both;
+}
 
-    @keyframes floatUp {
-      to { transform: translateY(-110vh) rotate(25deg); opacity: 0; }
-    }
-  </style>
+.hero .intro { margin-bottom: 28px; }
+
+@keyframes rise {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.btn {
+  display: inline-block;
+  border: 1px solid #f5b9ce66;
+  border-radius: 99px;
+  padding: 13px 22px;
+  background: #f5b9ce12;
+  color: var(--cream);
+  font-size: .88rem;
+  transition: .25s;
+}
+
+.btn:hover { transform: translateY(-2px); }
+
+.btn.primary {
+  background: linear-gradient(120deg, var(--pink), var(--gold));
+  color: #291722;
+  border: 0;
+  font-weight: 700;
+}
+
+.panel {
+  background: linear-gradient(145deg, #322033, #211520);
+  border: 1px solid #e7c69a30;
+  border-radius: 26px;
+  padding: 28px 20px;
+  box-shadow: 0 20px 70px #0002;
+}
+
+.ornament {
+  font-size: 1.5rem;
+  color: var(--gold);
+  margin: 16px;
+}
+
+/* FLOATING HEARTS */
+
+#particles {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.particle {
+  position: absolute;
+  bottom: -35px;
+  color: var(--pink);
+  opacity: 0;
+  animation: floatUp linear infinite;
+}
+
+@keyframes floatUp {
+  10% { opacity: .5; }
+  90% { opacity: .25; }
+  100% { transform: translateY(-110vh) rotate(35deg); opacity: 0; }
+}
+
+/* GIFT */
+
+.gift-button {
+  display: block;
+  width: 205px;
+  height: 205px;
+  padding: 0;
+  margin: 15px auto;
+  background: none;
+  border: 0;
+  animation: glow 2.4s infinite;
+}
+
+.gift-button svg { width: 100%; height: 100%; }
+
+@keyframes glow {
+  50% { filter: drop-shadow(0 0 18px #f5b9ce77); }
+}
+
+.gift-lid { transform-origin: 100px 72px; }
+
+.gift-button.opened .gift-lid {
+  animation: openGift .8s forwards;
+}
+
+@keyframes openGift {
+  to { transform: translate(-12px, -28px) rotate(-18deg); opacity: .5; }
+}
+
+.hint {
+  font-size: .83rem;
+  color: var(--muted);
+}
+
+#reveal {
+  display: none;
+}
+
+#reveal.visible {
+  display: block;
+  animation: rise .9s both;
+}
+
+/* PHOTOS */
+
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.photo-card {
+  background: #ffffff08;
+  border: 1px solid #e7c69a30;
+  border-radius: 22px;
+  padding: 10px;
+  overflow: hidden;
+}
+
+.photo-card img {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  display: block;
+  object-fit: cover;
+  object-position: center 25%;
+  border-radius: 15px;
+  background: #211520;
+}
+
+.photo-card .caption {
+  color: var(--pink);
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 1.35rem;
+  padding: 12px 4px 5px;
+  margin: 0;
+}
+
+.photo-card .subcaption {
+  font-size: .78rem;
+  color: var(--muted);
+  padding: 0 4px 5px;
+  margin: 0;
+}
+
+.video-box {
+  margin-top: 28px;
+  padding: 12px;
+  background: #ffffff07;
+  border: 1px solid #e7c69a30;
+  border-radius: 22px;
+}
+
+.video-box video {
+  width: 100%;
+  display: block;
+  border-radius: 15px;
+  background: #100a13;
+  max-height: 600px;
+}
+
+/* TWELVE REASONS */
+
+.reasons {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 30px;
+}
+
+.reason {
+  text-align: left;
+  padding: 18px;
+  border: 1px solid #e7c69a25;
+  background: #ffffff06;
+  border-radius: 17px;
+}
+
+.reason span { font-size: 1.35rem; }
+
+.reason h3 {
+  color: var(--pink);
+  font-size: 1.35rem;
+  margin: 9px 0 5px;
+}
+
+.reason p {
+  font-size: .82rem;
+  color: var(--muted);
+  margin: 0;
+}
+
+/* CAKE */
+
+.cake-button {
+  background: none;
+  border: 0;
+  color: inherit;
+  padding: 15px;
+}
+
+.cake {
+  position: relative;
+  width: 220px;
+  height: 210px;
+  margin: auto;
+}
+
+.plate {
+  position: absolute;
+  bottom: 8px;
+  left: -9px;
+  width: 238px;
+  height: 18px;
+  border-radius: 50%;
+  background: linear-gradient(#fff4ed, #bb968f);
+}
+
+.cake-base {
+  position: absolute;
+  bottom: 23px;
+  width: 220px;
+  height: 65px;
+  border-radius: 10px 10px 24px 24px;
+  background: linear-gradient(130deg, #e7c69a, #b67a75);
+  box-shadow: inset 0 -9px #875464;
+}
+
+.frosting {
+  position: absolute;
+  bottom: 72px;
+  left: 12px;
+  width: 196px;
+  height: 52px;
+  border-radius: 50% 50% 14px 14px;
+  background: linear-gradient(130deg, #ffd6e2, #be7190);
+}
+
+.frosting::after {
+  content: "♥️  ♥️  ♥️";
+  position: absolute;
+  top: 17px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  letter-spacing: 10px;
+  font-size: 13px;
+  color: white;
+}
+
+.candle {
+  position: absolute;
+  bottom: 122px;
+  left: 104px;
+  width: 12px;
+  height: 60px;
+  border-radius: 4px;
+  background: repeating-linear-gradient(
+    -45deg, white 0 6px, #e8a7bb 6px 12px
+  );
+}
+
+.flame {
+  position: absolute;
+  width: 22px;
+  height: 32px;
+  left: -5px;
+  top: -32px;
+  border-radius: 60% 40% 60% 40%;
+  background: radial-gradient(ellipse at 50% 70%, #fff9d8 0 20%, #ffd26f 38%, #ff9954 70%, transparent 74%);
+  filter: drop-shadow(0 0 12px #ffca74);
+  animation: flicker .6s infinite alternate;
+}
+
+.flame.out {
+  opacity: 0;
+  animation: none;
+  transform: translateY(-15px) scale(.1);
+}
+
+@keyframes flicker {
+  to { transform: rotate(-9deg) scale(.9); }
+}
+
+/* LETTER MODAL */
+
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  background: #100a13ed;
+  opacity: 0;
+  visibility: hidden;
+  transition: .4s;
+}
+
+.modal.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.letter {
+  position: relative;
+  width: min(100%, 550px);
+  max-height: 85svh;
+  overflow-y: auto;
+  padding: 35px 24px;
+  border-radius: 23px;
+  background: linear-gradient(145deg, #fff4ed, #f5dce4);
+  color: #46283b;
+  transform: translateY(15px);
+  transition: .4s;
+}
+
+.modal.visible .letter { transform: translateY(0); }
+
+.letter h2 {
+  font-size: clamp(2.5rem, 9vw, 3.5rem);
+}
+
+.letter p { font-size: .92rem; }
+
+.letter .signoff {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  color: #985575;
+  font-size: 1.7rem;
+}
+
+.close {
+  position: absolute;
+  right: 12px;
+  top: 12px;
+  border: 0;
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+  background: #46283b12;
+  color: #46283b;
+  font-size: 1.4rem;
+}
+
+#confetti {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 7;
+}
+
+footer {
+  padding: 35px 18px 45px;
+  text-align: center;
+  color: var(--muted);
+  font-size: .78rem;
+}
+
+@media (max-width: 480px) {
+  section { padding: 55px 0; }
+  .panel { padding: 23px 14px; }
+  .photo-grid { gap: 9px; }
+  .photo-card { padding: 7px; border-radius: 16px; }
+  .photo-card img { border-radius: 11px; }
+  .photo-card .caption { font-size: 1.15rem; }
+  .reasons { gap: 8px; }
+  .reason { padding: 13px; }
+  .letter { padding: 34px 20px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: .01ms !important;
+  }
+}
+</style>
 </head>
 
 <body>
+<div id="particles" aria-hidden="true"></div>
+<canvas id="confetti" aria-hidden="true"></canvas>
 
-<header>
-  <div class="heart">❤️</div>
-  <p>A special day for my favourite person</p>
-  <h1>Happy Birthday, My Beautiful Soul!</h1>
-  <p>Today is all about YOU, my love. 💕</p>
-  <button onclick="showSurprise()">Open Your Surprise 🎁</button>
-  <p id="surprise" hidden>
-    You are loved more than words could ever explain. Happy birthday, baby! 💖
-  </p>
-</header>
-
-<section>
-  <div class="card">
-    <h2>To My Better Half 💗</h2>
-    <p>
-      If I could give you one thing in life, I would give you the ability
-      to see yourself through my eyes. Then you would understand how
-      precious, beautiful, and special you are to me.
-    </p>
-    <p>
-      Thank you for being there for me, especially on the days when life
-      feels difficult. Your voice brings me comfort, your love gives me
-      strength, and your presence makes my world brighter.
-    </p>
-    <p>Today, I celebrate you, my love. Always and forever. ❤️</p>
-  </div>
-</section>
-
-<section>
-  <h2>Our Beautiful Birthday Gallery 📸</h2>
-  <p>Every picture tells a little story about my favourite girl.</p>
-
-  <div class="gallery">
-    <div class="photo-card">
-      <img src="./Childhood-photo.jpg.jpeg"
-           alt="Your childhood picture">
-      <p><strong>Little You 🧸</strong></p>
-      <p>A precious beginning to a beautiful story.</p>
+<main>
+  <!-- BIRTHDAY HERO -->
+  <section class="hero">
+    <div class="hero-content">
+      <div class="eyebrow">Today is all about you ✨</div>
+      <div class="ornament">✦ ♡ ✦</div>
+      <h1>Happy Birthday,<br><em>Beautiful Soul.</em> 🌷</h1>
+      <p class="intro">
+        Today is a celebration of you — your beautiful heart,
+        your smile, your dreams, and all the wonderful things
+        that make you the person you are.
+      </p>
+      <a class="btn primary" href="#surprise">Your little surprise 🎁</a>
     </div>
+  </section>
 
-    <div class="photo-card">
-      <img src="./Birthday-photo.jpg.jpeg"
-           alt="My beautiful birthday girl">
-      <p><strong>My Beautiful Girl 🌹</strong></p>
-      <p>Beautiful then, beautiful now, beautiful always.</p>
-    </div>
-  </div>
-</section>
-
-<section>
-  <h2>Your Special Dance 💃❤️</h2>
-  <div class="card">
-    <video controls playsinline preload="metadata">
-      <source src="./Her%20dancing.mp4" type="video/mp4">
-      Your browser cannot play this video.
-    </video>
-    <p>One more reason to smile whenever I think of you. 🥰</p>
-  </div>
-</section>
-
-<section>
-  <h2>A Letter From My Heart 💌</h2>
-  <div class="card">
-    <p>
-      My love, this little website cannot contain everything I feel for you,
-      but I hope it reminds you how much you mean to me.
+  <!-- INTERACTIVE GIFT -->
+  <section id="surprise" class="center">
+    <div class="eyebrow">A little something special</div>
+    <h2>A Gift Just for You</h2>
+    <p class="intro">
+      Because wonderful people deserve to be reminded
+      how wonderful they are. Tap your gift to open it. 💗
     </p>
 
-    <button onclick="openLetter()">Read Your Birthday Letter 💌</button>
+    <button class="gift-button" id="giftButton"
+      aria-label="Open your birthday gift">
+      <svg viewBox="0 0 200 205" role="img" aria-label="Pink birthday present">
+        <defs>
+          <linearGradient id="boxPink" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#f5b9ce"/>
+            <stop offset="1" stop-color="#b96d8d"/>
+          </linearGradient>
+          <linearGradient id="ribbonGold" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#fff0c7"/>
+            <stop offset="1" stop-color="#bd9664"/>
+          </linearGradient>
+        </defs>
+        <ellipse cx="100" cy="183" rx="75" ry="10" fill="#000" opacity=".3"/>
+        <g class="gift-lid">
+          <path d="M100 60 C45 10 35 66 100 73 C165 66 155 10 100 60Z"
+            fill="none" stroke="url(#ribbonGold)" stroke-width="9"/>
+          <rect x="23" y="58" width="154" height="28" rx="5" fill="url(#boxPink)"/>
+          <rect x="91" y="58" width="18" height="28" fill="url(#ribbonGold)"/>
+        </g>
+        <rect x="35" y="84" width="130" height="96" rx="5" fill="url(#boxPink)"/>
+        <rect x="91" y="84" width="18" height="96" fill="url(#ribbonGold)"/>
+        <path d="M91 120 L100 111 L109 120 L100 132Z" fill="#fff4ed"/>
+      </svg>
+    </button>
 
-    <div id="letter">
-My Baby, My Beautiful Soul ❤️
+    <p class="hint" id="giftHint">Tap to open your little surprise ❤️</p>
 
-Happy birthday, my love.
-
-Sometimes I wonder what my life would look like without you, and honestly,
-I am grateful that I don't have to find out. You have stood beside me
-through difficult moments, and even when I feel overwhelmed, hearing
-your voice can bring peace to my heart.
-
-Thank you for loving me, believing in me, and being such a special part
-of my life. I may not have everything figured out yet, but one thing
-I never want you to doubt is how deeply I care about you.
-
-On your birthday, I pray that God blesses you with good health, peace,
-happiness, favour, wisdom, and beautiful opportunities. May your silent
-prayers receive answers, may your tears become smiles, and may this
-new chapter bring you reasons to be proud of yourself.
-
-Never forget that you deserve genuine love, beautiful things, and a life
-filled with happiness.
-
-Happy birthday, my better half.
-I love you, today and always. ❤️
-
-Forever your person. 💋
+    <div id="reveal">
+      <div class="panel">
+        <div class="ornament">🌸</div>
+        <h2>You Deserve Beautiful Things</h2>
+        <p class="intro">
+          May this new chapter bring you peace, laughter,
+          confidence, beautiful opportunities, and so many
+          reasons to be proud of yourself.
+        </p>
+        <a href="#her-moments" class="btn primary">A little look at you ↓</a>
+      </div>
     </div>
+  </section>
+
+  <!-- HER PHOTOS -->
+  <section id="her-moments" class="center">
+    <div class="eyebrow">Every chapter of you is beautiful</div>
+    <h2>Look at You, Growing Beautifully 🌷</h2>
+    <p class="intro">
+      From the little girl with a whole life ahead of her
+      to the beautiful woman she is becoming.
+      Every version of you deserves to be celebrated.
+    </p>
+
+    <div class="photo-grid">
+      <article class="photo-card">
+        <img src="her-photo.jpg"
+          alt="A beautiful birthday girl"
+          loading="lazy">
+        <p class="caption">Beautiful Then, Beautiful Now</p>
+        <p class="subcaption">A smile worth celebrating. ❤️</p>
+      </article>
+
+      <article class="photo-card">
+        <img src="her-childhood.jpg"
+          alt="A childhood memory of the birthday girl"
+          loading="lazy">
+        <p class="caption">Little Miss Sunshine</p>
+        <p class="subcaption">Look how far this little girl has come. 🥹</p>
+      </article>
+    </div>
+
+    <p class="hint">
+      Two pictures, a thousand lovely things to appreciate.
+    </p>
+  </section>
+
+  <!-- HER THROWBACK DANCING VIDEO -->
+  <section class="center">
+    <div class="eyebrow">A little trip down memory lane</div>
+    <h2>Some Things Never Lose Their Magic 🎬</h2>
+    <p class="intro">
+      A little throwback, a little dancing, and another
+      reason to smile. Some moments deserve to be kept forever.
+    </p>
+
+    <div class="video-box">
+      <video controls playsinline preload="metadata"
+        poster="her-childhood.jpg">
+        <source src="her-dancing.mp4" type="video/mp4">
+        Your browser does not support this video.
+      </video>
+    </div>
+    <p class="hint">A tiny memory with a big smile attached. 💕</p>
+  </section>
+
+  <!-- TWELVE THINGS THAT MAKE HER SPECIAL -->
+  <section class="center">
+    <div class="eyebrow">A dozen little reminders</div>
+    <h2>12 Things That Make You Special</h2>
+    <p class="intro">
+      Just a few reminders of the wonderful person you are.
+      Change any of these to match her personality.
+    </p>
+
+    <div class="reasons">
+      <article class="reason">
+        <span>💗</span>
+        <h3>Your Heart</h3>
+        <p>The kindness and warmth you bring into the world.</p>
+      </article>
+      <article class="reason">
+        <span>✨</span>
+        <h3>Your Smile</h3>
+        <p>A little brightness that can change an ordinary day.</p>
+      </article>
+      <article class="reason">
+        <span>🌷</span>
+        <h3>Your Beauty</h3>
+        <p>Something that shines beyond what the eyes can see.</p>
+      </article>
+      <article class="reason">
+        <span>🦋</span>
+        <h3>Your Growth</h3>
+        <p>Every lesson and every step that has shaped you.</p>
+      </article>
+      <article class="reason">
+        <span>🌟</span>
+        <h3>Your Dreams</h3>
+        <p>The beautiful future you're working towards.</p>
+      </article>
+      <article class="reason">
+        <span>😊</span>
+        <h3>Your Laughter</h3>
+        <p>The joy you bring when you let yourself be happy.</p>
+      </article>
+      <article class="reason">
+        <span>💪</span>
+        <h3>Your Strength</h3>
+        <p>How you keep moving, even when life is not easy.</p>
+      </article>
+      <article class="reason">
+        <span>🌻</span>
+        <h3>Your Spirit</h3>
+        <p>The unique energy that makes you who you are.</p>
+      </article>
+      <article class="reason">
+        <span>🎀</span>
+        <h3>Your Style</h3>
+        <p>The little details that make you wonderfully you.</p>
+      </article>
+      <article class="reason">
+        <span>🕊️</span>
+        <h3>Your Peace</h3>
+        <p>You deserve calm days and a heart that feels light.</p>
+      </article>
+      <article class="reason">
+        <span>🌈</span>
+        <h3>Your Possibilities</h3>
+        <p>So many beautiful things are still ahead of you.</p>
+      </article>
+      <article class="reason">
+        <span>❤️</span>
+        <h3>Simply You</h3>
+        <p>No reason needed. You are enough, just as you are.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- BIRTHDAY CAKE -->
+  <section class="center">
+    <div class="eyebrow">One last little surprise</div>
+    <h2>Make a Wish, Beautiful 🎂</h2>
+    <p class="intro">
+      Take a little moment for yourself. Think of a wish,
+      tap the glowing candle, and open your birthday letter.
+    </p>
+
+    <div class="panel">
+      <button id="cakeButton" class="cake-button"
+        aria-label="Blow out the birthday candle">
+        <div class="cake">
+          <div class="candle">
+            <div class="flame" id="flame"></div>
+          </div>
+          <div class="frosting"></div>
+          <div class="cake-base"></div>
+          <div class="plate"></div>
+        </div>
+      </button>
+      <p class="hint" id="cakeHint">Tap the candle to make a wish ✨</p>
+    </div>
+  </section>
+</main>
+
+<!-- BIRTHDAY LETTER -->
+<div class="modal" id="letterModal"
+  role="dialog" aria-modal="true"
+  aria-labelledby="letterTitle" aria-hidden="true">
+  <div class="letter">
+    <button class="close" id="closeLetter" aria-label="Close letter">×</button>
+
+    <div class="eyebrow">A message from the heart</div>
+    <h2 id="letterTitle">To a Truly Beautiful Soul 🌷</h2>
+
+    <p>Happy Birthday, Beautiful! 🥹💗</p>
+
+    <p>
+      Today is all about celebrating someone who deserves so much
+      happiness, peace, love, and beautiful things in life.
+    </p>
+
+    <p>
+      May you never forget how special you are, even on the days
+      when life feels difficult. May your smile always find its way
+      back to your face, your heart find reasons to be happy,
+      and your dreams become beautiful realities.
+    </p>
+
+    <p>
+      You deserve the kind of happiness that comes from within,
+      the kind of love that feels genuine, and the kind of life
+      that makes you proud of how far you've come.
+    </p>
+
+    <p>
+      As you begin another chapter, may life surprise you with
+      beautiful opportunities, answered prayers, unforgettable
+      memories, and countless reasons to smile.
+    </p>
+
+    <p>
+      Never stop being the wonderful person you are.
+      The world is a little more beautiful because you're in it. 🌸✨
+    </p>
+
+    <p>
+      May this new chapter be gentle with your heart,
+      generous with its blessings, and filled with moments
+      that remind you how much you have to look forward to.
+    </p>
+
+    <p class="signoff">
+      Happy Birthday, Beautiful Soul. ❤️🎂
+    </p>
+
+    <p>May your next chapter be your most beautiful one yet. ♡</p>
+
+    <button class="btn primary" id="finishLetter">
+      Keep shining, beautiful ✨
+    </button>
   </div>
-</section>
-
-<section>
-  <h2>12 Things I Want You to Remember 🌷</h2>
-
-  <div class="affirmation">1. You are deeply loved. ❤️</div>
-  <div class="affirmation">2. You are beautiful inside and out. 🌹</div>
-  <div class="affirmation">3. You deserve genuine happiness. 💕</div>
-  <div class="affirmation">4. Your dreams are worth pursuing. ✨</div>
-  <div class="affirmation">5. You are stronger than you realise. 💪</div>
-  <div class="affirmation">6. Your kindness matters. 🌸</div>
-  <div class="affirmation">7. You deserve peace of mind. 🕊️</div>
-  <div class="affirmation">8. You make my life brighter. ☀️</div>
-  <div class="affirmation">9. You are enough just as you are. 💗</div>
-  <div class="affirmation">10. Your future can be beautiful. 🌈</div>
-  <div class="affirmation">11. You will always have a special place in my heart. 💌</div>
-  <div class="affirmation">12. I am grateful that you exist. 🎂</div>
-</section>
-
-<section>
-  <h2>Songs That Remind Me of You 🎶</h2>
-  <div class="card">
-    <p><strong>1. Perfect — Ed Sheeran</strong></p>
-    <a class="song-link"
-       href="https://www.youtube.com/results?search_query=Ed+Sheeran+Perfect+official"
-       target="_blank" rel="noopener noreferrer">
-       Play Song 🎵
-    </a>
-
-    <p><strong>2. All of Me — John Legend</strong></p>
-    <a class="song-link"
-       href="https://www.youtube.com/results?search_query=John+Legend+All+of+Me+official"
-       target="_blank" rel="noopener noreferrer">
-       Play Song 🎶
-    </a>
-    <p>Two songs, one girl, and a heart full of love. ❤️</p>
-  </div>
-</section>
-
-<section>
-  <div class="card">
-    <h2>Make a Birthday Wish 🎂</h2>
-    <p>Close your eyes, make a wish, and believe in beautiful things.</p>
-    <button onclick="wish()">I Made My Wish ✨</button>
-    <p id="wishMessage"></p>
-  </div>
-</section>
+</div>
 
 <footer>
-  <div class="heart">💗</div>
-  <h2 style="color:white">Happy Birthday, My Love!</h2>
-  <p>Made with all my heart, just for you. ❤️</p>
-  <p>Today, tomorrow, and every day after.</p>
+  A little birthday magic, made just for a beautiful soul. 🌷
+  <div style="margin-top:9px">May life keep giving you reasons to smile. ♡</div>
 </footer>
 
 <script>
-  function showSurprise() {
-    const surprise = document.getElementById("surprise");
-    surprise.hidden = false;
-    surprise.scrollIntoView({ behavior: "smooth", block: "center" });
-    hearts();
+/* FLOATING HEARTS */
+const particles = document.getElementById("particles");
+const symbols = ["♡", "✦", "♥️", "✧"];
+
+for (let i = 0; i < 24; i++) {
+  const p = document.createElement("span");
+  p.className = "particle";
+  p.textContent = symbols[i % symbols.length];
+  p.style.left = Math.random() * 100 + "%";
+  p.style.fontSize = (10 + Math.random() * 15) + "px";
+  p.style.animationDuration = (13 + Math.random() * 18) + "s";
+  p.style.animationDelay = (-Math.random() * 25) + "s";
+  particles.appendChild(p);
+}
+
+/* CONFETTI */
+const canvas = document.getElementById("confetti");
+const ctx = canvas.getContext("2d");
+let pieces = [];
+let frame = null;
+let confettiEnd = 0;
+
+function resizeCanvas() {
+  const dpr = Math.min(window.devicePixelRatio || 1, 2);
+  canvas.width = innerWidth * dpr;
+  canvas.height = innerHeight * dpr;
+  canvas.style.width = innerWidth + "px";
+  canvas.style.height = innerHeight + "px";
+  ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+}
+
+resizeCanvas();
+window.addEventListener("resize", resizeCanvas);
+
+function celebrate() {
+  const colors = ["#f5b9ce", "#e7c69a", "#fff4ed", "#d99a9d", "#c9a0cf"];
+
+  for (let i = 0; i < 160; i++) {
+    pieces.push({
+      x: innerWidth / 2 + (Math.random() - .5) * 90,
+      y: innerHeight * .4,
+      vx: (Math.random() - .5) * 12,
+      vy: -Math.random() * 11 - 2,
+      gravity: .16 + Math.random() * .12,
+      size: 3 + Math.random() * 5,
+      rotation: Math.random() * 6,
+      spin: (Math.random() - .5) * .2,
+      color: colors[Math.floor(Math.random() * colors.length)],
+      life: 140
+    });
   }
 
-  function openLetter() {
-    const letter = document.getElementById("letter");
-    letter.style.display = letter.style.display === "block" ? "none" : "block";
-    if (letter.style.display === "block") {
-      letter.scrollIntoView({ behavior: "smooth", block: "center" });
-      hearts();
-    }
+  confettiEnd = performance.now() + 5000;
+  if (!frame) drawConfetti();
+}
+
+function drawConfetti() {
+  ctx.clearRect(0, 0, innerWidth, innerHeight);
+  pieces = pieces.filter(p => p.life > 0 && p.y < innerHeight + 40);
+
+  for (const p of pieces) {
+    p.x += p.vx;
+    p.y += p.vy;
+    p.vy += p.gravity;
+    p.vx *= .994;
+    p.rotation += p.spin;
+    p.life--;
+
+    ctx.save();
+    ctx.translate(p.x, p.y);
+    ctx.rotate(p.rotation);
+    ctx.globalAlpha = Math.min(1, p.life / 30);
+    ctx.fillStyle = p.color;
+    ctx.fillRect(-p.size / 2, -p.size / 2, p.size, p.size * 1.7);
+    ctx.restore();
   }
 
-  function wish() {
-    document.getElementById("wishMessage").textContent =
-      "May your wish come true, my love. You deserve beautiful things! ❤️✨";
-    hearts();
+  if (pieces.length && performance.now() < confettiEnd) {
+    frame = requestAnimationFrame(drawConfetti);
+  } else {
+    pieces = [];
+    ctx.clearRect(0, 0, innerWidth, innerHeight);
+    frame = null;
   }
+}
 
-  function hearts() {
-    for (let i = 0; i < 18; i++) {
-      const heart = document.createElement("span");
-      heart.className = "floating-heart";
-      heart.textContent = ["❤️", "💗", "💕", "🌸"][Math.floor(Math.random() * 4)];
-      heart.style.left = Math.random() * 100 + "vw";
-      heart.style.fontSize = (18 + Math.random() * 20) + "px";
-      heart.style.animationDuration = (3 + Math.random() * 3) + "s";
-      document.body.appendChild(heart);
-      setTimeout(() => heart.remove(), 6500);
-    }
+/* GIFT REVEAL */
+const giftButton = document.getElementById("giftButton");
+const reveal = document.getElementById("reveal");
+
+giftButton.addEventListener("click", () => {
+  if (giftButton.classList.contains("opened")) return;
+
+  giftButton.classList.add("opened");
+  document.getElementById("giftHint").textContent =
+    "A little reminder of how special you are. ❤️";
+
+  celebrate();
+
+  setTimeout(() => {
+    reveal.classList.add("visible");
+    reveal.scrollIntoView({ behavior: "smooth", block: "center" });
+  }, 500);
+});
+
+/* CAKE AND BIRTHDAY LETTER */
+const flame = document.getElementById("flame");
+const modal = document.getElementById("letterModal");
+const cakeButton = document.getElementById("cakeButton");
+const closeButton = document.getElementById("closeLetter");
+
+function openLetter() {
+  if (flame.classList.contains("out")) return;
+
+  flame.classList.add("out");
+  document.getElementById("cakeHint").textContent =
+    "Your wish is on its way. ❤️";
+
+  celebrate();
+  modal.classList.add("visible");
+  modal.setAttribute("aria-hidden", "false");
+  document.body.style.overflow = "hidden";
+  setTimeout(() => closeButton.focus(), 150);
+}
+
+function closeLetter() {
+  modal.classList.remove("visible");
+  modal.setAttribute("aria-hidden", "true");
+  document.body.style.overflow = "";
+  cakeButton.focus();
+}
+
+cakeButton.addEventListener("click", openLetter);
+closeButton.addEventListener("click", closeLetter);
+document.getElementById("finishLetter").addEventListener("click", closeLetter);
+
+modal.addEventListener("click", event => {
+  if (event.target === modal) closeLetter();
+});
+
+document.addEventListener("keydown", event => {
+  if (event.key === "Escape" && modal.classList.contains("visible")) {
+    closeLetter();
   }
-
-  setInterval(() => {
-    const heart = document.createElement("span");
-    heart.className = "floating-heart";
-    heart.textContent = "💕";
-    heart.style.left = Math.random() * 100 + "vw";
-    heart.style.fontSize = "22px";
-    heart.style.animationDuration = "6s";
-    document.body.appendChild(heart);
-    setTimeout(() => heart.remove(), 6500);
-  }, 1800);
+});
 </script>
-
 </body>
 </html>
